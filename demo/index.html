@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    main{
+      margin-top: 3rem;
+    }
+    main > section:first-of-type{
+      background-color: rgb(0, 135, 245);
+    }
+    nav{
+      position: fixed;
+      top:0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: brown;
+    }
+    a{
+      padding: 1rem;
+      font-weight: bold;
+      color: white;
+      display: inline-block;
+      text-decoration: none;
+    }
+    a:hover{
+      background-color: chartreuse;
+      color: black;
+    }
+    section{
+      min-height: 30vh;
+      padding: 1rem;
+      border-top: 2px solid brown;
+    }
+    .active{
+      color: black;
+      background-color: chartreuse;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav>
+      <a data-pointsTo="aaaaa" href="aaaaa">link 1</a>
+      <a data-pointsTo="aaaa" href="aaaa">link 2</a>
+      <a data-pointsTo="aaa" href="aaa">link 3</a>
+      <a data-pointsTo="aa" href="aa">link 4</a>
+      <a data-pointsTo="a" href="a">link 5</a>
+    </nav>
+    <section></section>
+    <article>
+      <section id="aaaaa" data-trigger="true">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+      </section>
+      <section id="aaaa" data-trigger="true">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+      </section>
+      <section id="aaa" data-trigger="true">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+      </section>
+      <section id="aa" data-trigger="true">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+      </section>
+      <section id="a" data-trigger="true">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+      </section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+      <section></section>
+    </article>
+  </main>
+  <script src="../scrollSpyES5.js"></script>
+  <script>
+    new ScrollSpy({checkLowerBound: true});
+  </script>
+</body>
+</html>
