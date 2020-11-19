@@ -20,6 +20,9 @@ If elements are greater than viewport `checkLowerBound` should be set to `false`
     <script> new ScrollSpy(); </script>
 
 
+A sample in docs folder
+
+
 ### Options
 
 |Properties|Description|
