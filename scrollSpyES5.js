@@ -69,7 +69,7 @@ var ScrollSpy = function () {
         }
       }
       if (last) {
-        var link = document.querySelector("[href=\"" + last.id + "\"]") || document.querySelector("[data-pointsTo=\"" + last.id + "\"]"); //id here
+        var link = document.querySelector("[href=#\"" + last.id + "\"]") || document.querySelector("[data-pointsTo=\"" + last.id + "\"]"); //id here
 
         link.classList.add(this.options.activeClassName);
       }
