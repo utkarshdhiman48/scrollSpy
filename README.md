@@ -1,17 +1,9 @@
 
 # scrollSpy
 
-A pure JS scrollSpy. No dependency.
-Works without jQuery
+A pure JS scrollSpy with no dependency.
 
- Think of it like a window, last element inside the window will be considered active , height of last element should be smaller than this window
-
-
-OffsetY is subtracted from viewport height so give value accordingly
-
-
-If elements are greater than viewport `checkLowerBound` should be set to `false`
-
+Note: Links and target elements should appear in same order.
 
 ### Initialization
 
@@ -22,19 +14,23 @@ If elements are greater than viewport `checkLowerBound` should be set to `false`
       <a data-pointsTo="aa" href="#aa">link 4</a>
       <a data-pointsTo="a" href="#a">link 5</a>
     </nav>
+
     ...
-    <section id="aaaaa" data-trigger="true"></section>
+
+      <section id="aaaaa" data-trigger="true"></section>
       <section id="aaaa" data-trigger="true"></section>
       <section id="aaa" data-trigger="true"></section>
       <section id="aa" data-trigger="true"></section>
       <section id="a" data-trigger="true"></section>
+			
     ...
     <script src="./path/scrollSpy.js"></script>
     <script> new ScrollSpy(); </script>
 
 
-* `id` and `data-trigger` attributes are must for section to be considered.
-* Both `data-pointsTo` or `href` can be used `href` will be given preference.
+* `id` and`data-trigger` attributes are required for section to be considered.
+
+* `data-pointsTo` attribute must be present in links(navigation).
 
 A [hosted sample](https://utkarsh48.github.io/scrollSpy/) in docs folder.
 
@@ -43,23 +39,21 @@ A [hosted sample](https://utkarsh48.github.io/scrollSpy/) in docs folder.
 
 |Properties|Description|
 |-|-|
-|offsetY | distance to spare from top and bottom|
-|links | link elements|
-|linksTo | corresponding elements|
-|activeClassName | CSS class when in view|
-|checkLowerBound | should be true if elements are smaller than viewport|
+|offsetTop | distance to spare from top |
+|offsetBottom | distance to spare from bottom |
+|links | link elements(navigation) |
+|linksTo | corresponding target elements|
+|activeClassName | CSS class to be applied, when in view|
 
 
 ### Defaults
 
     let options={
-	    offsetY: window.innerHeight/8, 
+	    offsetTop: window.innerHeight/8,
+	    offsetBottom: window.innerHeight/8,
 	    links: "nav *", 
 	    linksTo: "[data-trigger]", 
 	    activeClassName: "active", 
 	    checkLowerBound: true 
     }
     new ScrollSpy(options);
-
-
-ES5 version is also available.

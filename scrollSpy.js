@@ -1,69 +1,92 @@
 "use strict";
+class Element {
+	constructor(node) {
+		this.node = node;
+		this.top = node.offsetTop;
+		this.bottom = node.offsetTop + node.scrollHeight;
+	}
+	activate(activeClassName) {
+		if (!this.node.classList.contains(activeClassName))
+			this.node.classList.add(activeClassName);
+	}
+	deactivate(activeClassName) {
+		if (this.node.classList.contains(activeClassName))
+			this.node.classList.remove(activeClassName);
+	}
 
-class ScrollSpy{
-  constructor(option = {}){
-    Object.keys(option).forEach(key=>{
-      this.#options[key]=option[key];
-    })
-    this.#init();
-    this.#watch();
-  }
-  #options={
-    offsetY: window.innerHeight/8,
-    links: "nav *",
-    linksTo: "[data-trigger]",
-    activeClassName: "active",
-    checkLowerBound: true
-  };
+}
 
-  #watch=()=>{
-    window.addEventListener("scroll",()=>{
-      this.#init();
-    });
-  };
+class ScrollSpy {
+	constructor(option) {
+		Object.keys(option).forEach(key=>{
+		  this.options[key]=option[key];
+		})
 
-  #init=()=>{
-    const navLinks = document.querySelectorAll(this.#options.links);
+		//all elements to scroll
+		this.elements = new Array();
 
-    const scrollTriggers = [...document.querySelectorAll(this.#options.linksTo)];
+		document.querySelectorAll(this.options.linksTo).forEach(e => {
+			this.elements.push(new Element(e));
+		});
 
-    let scrolled = document.body.scrollTop || document.documentElement.scrollTop;
-    let viewportHeight = window.innerHeight;
-    //scroll spy
-    let last;
-    navLinks.forEach(link=>link.classList.remove(this.#options.activeClassName));
-    
-    for(let i=0; i<scrollTriggers.length; i++){
-      let pos = this.#getPositionOfElement(scrollTriggers[i]);
-      if(this.#options.checkLowerBound){
-        let high = scrollTriggers[i].scrollHeight;
+		//elements to change state
+		this.links = new Array();
 
-        if((pos>scrolled+this.#options.offsetY && pos<scrolled+viewportHeight-this.#options.offsetY)
-        && (pos+high>scrolled-this.#options.offsetY && pos+high<scrolled+viewportHeight-this.#options.offsetY)
-        ){
-          last=scrollTriggers[i];
-        } 
-      }
-      else{
-        if(pos>scrolled-this.#options.offsetY && pos<scrolled+viewportHeight-2*this.#options.offsetY) {
-          last=scrollTriggers[i];
-        }
-      }
-    }
-    if(last){
-      let link = document.querySelector(`[href="#${last.id}"]`) || document.querySelector(`[data-pointsTo="${last.id}"]`); //id here
-  
-      link.classList.add(this.#options.activeClassName);
-    }
-  }
+		document.querySelectorAll(this.options.links).forEach(e => {
+			this.links.push(new Element(e));
+		});
 
-  #getPositionOfElement = (element)=>{
-    let pos = 0;
-    while (element != null)
-    {
-        pos += element.offsetTop;
-        element = element.offsetParent;
-    }
-    return pos;
-  }
+		//initial setup
+		this.init();
+		//register event handler
+		this.watch();
+
+	}
+
+	options = {
+		offsetTop: window.innerHeight / 8,
+		offsetBottom: window.innerHeight / 8,
+		links: "nav *",
+		linksTo: "[data-trigger]",
+		activeClassName: "active",
+	};
+
+	init(v_top, v_bottom) {
+		//looping through all elements
+		let toActivate;//last will be activated
+		for (let i = 0; i < this.elements.length; i++) {
+			//etop is greater than equal to vtop and etop is less than vbott(when etop is in the viewport)
+			if (this.elements[i].top >= v_top && this.elements[i].top < v_bottom) {
+				//ebott less than vbott
+				// this.links[i].activate("active");
+				// break;
+				toActivate = this.links[i];
+			}//etop is less than vtop and ebott is greater than vbott
+			else if (this.elements[i].top < v_top && this.elements[i].bottom > v_bottom) {
+				// this.links[i].activate("active");
+				// break;
+				toActivate = this.links[i];
+			}
+			this.links[i].deactivate(this.options.activeClassName);
+		}
+		toActivate.activate(this.options.activeClassName);
+	}
+
+	watch() {
+		window.addEventListener("scroll", () => {
+			//viewport state variables
+			let v_top = window.scrollY || window.pageYOffset;
+			let v_bottom = v_top + window.innerHeight;
+
+			//applying offsets
+			if(this.options.offsetTop){
+				v_top+=this.options.offsetTop;
+			}
+			if(this.options.offsetBottom){
+				v_bottom-=this.options.offsetBottom;
+			}
+
+			this.init(v_top, v_bottom);
+		});
+	}
 }
