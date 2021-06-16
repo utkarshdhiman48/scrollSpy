@@ -17,7 +17,7 @@ class Element {
 }
 
 class ScrollSpy {
-	constructor(option) {
+	constructor(option={}) {
 		Object.keys(option).forEach(key=>{
 		  this.options[key]=option[key];
 		})
@@ -37,7 +37,9 @@ class ScrollSpy {
 		});
 
 		//initial setup
-		this.init();
+		// let v_top = window.scrollY || window.pageYOffset;
+		// let v_bottom = v_top + window.innerHeight;
+		// this.init(0, window.innerHeight);
 		//register event handler
 		this.watch();
 
@@ -69,7 +71,12 @@ class ScrollSpy {
 			}
 			this.links[i].deactivate(this.options.activeClassName);
 		}
-		toActivate.activate(this.options.activeClassName);
+		try{
+			toActivate.activate(this.options.activeClassName);
+		}
+		catch(ex){
+			console.error("No element in range")
+		}
 	}
 
 	watch() {
