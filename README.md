@@ -6,7 +6,7 @@ A pure JS scrollSpy with no dependency.
 Note: Links and target elements should appear in same order.
 
 ### Initialization
-
+``` html
     <nav>
       <a data-pointsTo="aaaaa" href="#aaaaa">link 1</a>
       <a data-pointsTo="aaaa" href="#aaaa">link 2</a>
@@ -15,24 +15,22 @@ Note: Links and target elements should appear in same order.
       <a data-pointsTo="a" href="#a">link 5</a>
     </nav>
 
-    ...
-
-      <section id="aaaaa" data-trigger="true"></section>
-      <section id="aaaa" data-trigger="true"></section>
-      <section id="aaa" data-trigger="true"></section>
-      <section id="aa" data-trigger="true"></section>
-      <section id="a" data-trigger="true"></section>
+    <section id="aaaaa" data-trigger="true"></section>
+    <section id="aaaa" data-trigger="true"></section>
+    <section id="aaa" data-trigger="true"></section>
+    <section id="aa" data-trigger="true"></section>
+    <section id="a" data-trigger="true"></section>
 			
-    ...
     <script src="./path/scrollSpy.js"></script>
     <script> new ScrollSpy(); </script>
 
+```
 
 * `id` and`data-trigger` attributes are required for section to be considered.
 
 * `data-pointsTo` attribute must be present in links(navigation).
 
-A [hosted sample](https://utkarsh48.github.io/scrollSpy/) in docs folder.
+ALERT! A [hosted sample](https://utkarsh48.github.io/scrollSpy/) in docs FOLDER!
 
 
 ### Options
@@ -47,7 +45,7 @@ A [hosted sample](https://utkarsh48.github.io/scrollSpy/) in docs folder.
 
 
 ### Defaults
-
+``` javascript
     let options={
 	    offsetTop: window.innerHeight/8,
 	    offsetBottom: window.innerHeight/8,
@@ -57,3 +55,4 @@ A [hosted sample](https://utkarsh48.github.io/scrollSpy/) in docs folder.
 	    checkLowerBound: true 
     }
     new ScrollSpy(options);
+```
