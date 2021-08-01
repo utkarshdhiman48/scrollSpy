@@ -30,7 +30,7 @@ Note: Links and target elements should appear in same order.
 
 * `data-pointsTo` attribute must be present in links(navigation).
 
-ALERT! A [hosted sample](https://utkarsh48.github.io/scrollSpy/) in docs FOLDER!
+ALERT! A [hosted sample](https://utkarsh48.github.io/scrollSpy/) in this FOLDER!
 
 
 ### Options
