@@ -1,54 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    *{
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+    html {
+      --scrollbarBG: #CFD8DC;
+      --thumbBG: #90A4AE;
+    }
+
+    body::-webkit-scrollbar {
+      width: 11px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: var(--scrollbarBG);
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: var(--thumbBG);
+      border-radius: 6px;
+      border: 3px solid var(--scrollbarBG);
+    }
+
+    body {
+      height: 100vh;
+      background: whitesmoke;
+      overflow-y: auto;
+      font-family: monospace;
+      margin: 0 auto;
+      padding: 2rem;
+      font: 100%/1.4 serif;
+      border: 1px solid rgba(0, 0, 0, 0.25)
+    }
+
+    p {
+      margin: 0 0 1.5em;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: sans-serif;
+      font-family: monospace;
     }
-    main{
+
+    main {
       margin-top: 3rem;
     }
-    main > section:first-of-type{
-      background-color: rgb(0, 135, 245);
+
+    main>section:first-of-type {
+      background-color: rgb(43, 142, 160);
     }
-    nav{
+
+    nav {
       position: fixed;
-      top:0;
+      top: 0;
       left: 0;
       right: 0;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      background-color: brown;
+      background-color: rgba(145, 32, 32, 0.767);
     }
-    a{
+
+    a {
       padding: 1rem;
       font-weight: bold;
       color: white;
       display: inline-block;
+      transition: .5s;
       text-decoration: none;
     }
-    a:hover{
+
+    a:hover {
       background-color: chartreuse;
       color: black;
     }
-    section{
+
+    section {
       min-height: 30vh;
       padding: 1rem;
       border-top: 2px solid brown;
+      background: #f3efe7;
     }
-    .active{
+
+    .active {
       color: black;
       background-color: chartreuse;
     }
   </style>
 </head>
+
 <body>
   <main>
     <nav>
@@ -58,22 +109,36 @@
       <a data-pointsTo="aa" href="#aa">link 4</a>
       <a data-pointsTo="a" href="#a">link 5</a>
     </nav>
-    <section></section>
+    <section>
+      <h1 style="text-align: center;padding-top: 11vh;">
+        SCROLLSPY
+      </h1>
+    </section>
     <article>
       <section id="aaaaa" data-trigger="true">
-        1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+        1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident
+        exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae
+        pariatur facere.
       </section>
       <section id="aaaa" data-trigger="true">
-        2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+        2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident
+        exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae
+        pariatur facere.
       </section>
       <section id="aaa" data-trigger="true">
-        3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+        3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident
+        exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae
+        pariatur facere.
       </section>
       <section id="aa" data-trigger="true">
-        4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+        4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident
+        exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae
+        pariatur facere.
       </section>
       <section id="a" data-trigger="true">
-        5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae pariatur facere.
+        5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quia ducimus earum cumque. Minus provident
+        exercitationem enim quibusdam quas excepturi sapiente aliquid dolore in soluta repellendus veniam, beatae
+        pariatur facere.
       </section>
       <section></section>
       <section></section>
@@ -90,4 +155,5 @@
     new ScrollSpy();
   </script>
 </body>
+
 </html>
