@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrollSpy 👀</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+
+    html {
+      --scrollbarBG: #ffffff;
+      --thumbBG: #7da1b3;
+    }
+
+    body::-webkit-scrollbar {
+      width: 15px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: var(--scrollbarBG);
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: var(--thumbBG);
+      border-radius: 6px;
+      border: 3px solid var(--scrollbarBG);
+    }
+
+    body {
+      height: 100vh;
+      background: whitesmoke;
+      overflow-y: auto;
+      margin: 0 auto;
+      padding: 2rem;
+      background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2016/05/27/965493/efb541b2241d9c7265c9996408d4cc14-700.jpg");
+      min-height: 500px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font: 100%/1.4;
+    }
+
+    p {
+      margin: 0 0 1.5em;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Source Code Pro', monospace;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: monospace;
+    }
+
+    main {
+      margin-top: 3rem;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: rgba(32, 102, 145, 0.589);
+      backdrop-filter: blur(5px);
+      border-radius: 2px;
+      z-index: 1;
+    }
+
+    a {
+      padding: 1rem;
+      font-weight: bold;
+      color: white;
+      display: inline-block;
+      transition: .2s;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: rgba(128, 255, 0, 0.795);
+      color: black;
+    }
+
+    section {
+      min-height: 30vh;
+      padding: 1rem;
+      border-top: 3px solid rgb(0, 0, 0);
+      backdrop-filter: blur(5px);
+      background: #d5d5d55f;
+      color: rgb(0, 0, 0);
+    }
+
+    .active {
+      color: black;
+      background-color: chartreuse;
+    }
+
+    .heading-container {
+      border-radius: 5px;
+      backdrop-filter: blur(5px);
+      color: #000000d2;
+    }
+
+    * {
+      border-radius: 5px;
+    }
+
+    .avatar {
+      border-radius: 10px;
+      height: 150px;
+    }
+
+    .card-container {
+      display: flex;
+    }
+
+    .card {
+      max-width: 150px;
+      backdrop-filter: blur(10px);
+      box-shadow: 5px 5px 5px rgb(55, 55, 55);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <nav>
+      <a data-pointsTo="aaaaa" href="#aaaaa">SCROLL SPY 👀</a>
+      <a data-pointsTo="aaaa" href="#aaaa">import it</a>
+      <a data-pointsTo="aaa" href="#aaa">initialise</a>
+      <a data-pointsTo="aa" href="#aa">aditional configs</a>
+      <a data-pointsTo="a" href="#a">credits</a>
+    </nav>
+    <section class="heading-container" id="aaaaa" data-trigger="true">
+      <h1 style="font-size: 40px;text-align: center;padding-top: 11vh;">
+        ScrollSpy 👀
+      </h1>
+    </section>
+    <article>
+      <section id="aaaa" data-trigger="true">
+        <h2>
+          IMPORTING
+        </h2>
+        <br>
+
+        <pre style="color:#d1d1d1;background:#000000;"><span style="color:#d2cd86; ">&lt;</span>script src<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">//utkarsh48.github.io/scrollSpy/scrollSpy.js</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span>
+<span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>script<span style="color:#d2cd86; ">&gt;</span>
+        </pre>
+        <br>
+        <div>
+          THIS WILL IMOPRT THE LIBRARY TO YOUR PROJECT
+        </div>
+      </section>
+      <section id="aaa" data-trigger="true">
+        <h2>
+          INIT
+        </h2>
+        <br>
+
+        <pre style="color:#d1d1d1;background:#000000;">        <span style="color:#d2cd86; ">&lt;</span>nav<span style="color:#d2cd86; ">&gt;</span>
+          <span style="color:#d2cd86; ">&lt;</span>a data<span style="color:#d2cd86; ">-</span>pointsTo<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">aaaaa</span><span style="color:#02d045; ">"</span> href<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">#aaaaa</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#e66170; font-weight:bold; ">link</span> <span style="color:#008c00; ">1</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>a<span style="color:#d2cd86; ">&gt;</span>
+          <span style="color:#d2cd86; ">&lt;</span>a data<span style="color:#d2cd86; ">-</span>pointsTo<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">aaaa</span><span style="color:#02d045; ">"</span> href<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">#aaaa</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#e66170; font-weight:bold; ">link</span> <span style="color:#008c00; ">2</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>a<span style="color:#d2cd86; ">&gt;</span>
+          <span style="color:#d2cd86; ">&lt;</span>a data<span style="color:#d2cd86; ">-</span>pointsTo<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">aaa</span><span style="color:#02d045; ">"</span> href<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">#aaa</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#e66170; font-weight:bold; ">link</span> <span style="color:#008c00; ">3</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>a<span style="color:#d2cd86; ">&gt;</span>
+          <span style="color:#d2cd86; ">&lt;</span>a data<span style="color:#d2cd86; ">-</span>pointsTo<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">aa</span><span style="color:#02d045; ">"</span> href<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">#aa</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#e66170; font-weight:bold; ">link</span> <span style="color:#008c00; ">4</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>a<span style="color:#d2cd86; ">&gt;</span>
+          <span style="color:#d2cd86; ">&lt;</span>a data<span style="color:#d2cd86; ">-</span>pointsTo<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">a</span><span style="color:#02d045; ">"</span> href<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">#a</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#e66170; font-weight:bold; ">link</span> <span style="color:#008c00; ">5</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>a<span style="color:#d2cd86; ">&gt;</span>
+        <span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>nav<span style="color:#d2cd86; ">&gt;</span>
+    
+        <span style="color:#d2cd86; ">&lt;</span>section id<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">aaaaa</span><span style="color:#02d045; ">"</span> data<span style="color:#d2cd86; ">-</span>trigger<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">true</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>section<span style="color:#d2cd86; ">&gt;</span>
+        <span style="color:#d2cd86; ">&lt;</span>section id<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">aaaa</span><span style="color:#02d045; ">"</span> data<span style="color:#d2cd86; ">-</span>trigger<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">true</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>section<span style="color:#d2cd86; ">&gt;</span>
+        <span style="color:#d2cd86; ">&lt;</span>section id<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">aaa</span><span style="color:#02d045; ">"</span> data<span style="color:#d2cd86; ">-</span>trigger<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">true</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>section<span style="color:#d2cd86; ">&gt;</span>
+        <span style="color:#d2cd86; ">&lt;</span>section id<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">aa</span><span style="color:#02d045; ">"</span> data<span style="color:#d2cd86; ">-</span>trigger<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">true</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>section<span style="color:#d2cd86; ">&gt;</span>
+        <span style="color:#d2cd86; ">&lt;</span>section id<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">a</span><span style="color:#02d045; ">"</span> data<span style="color:#d2cd86; ">-</span>trigger<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">true</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>section<span style="color:#d2cd86; ">&gt;</span>
+          
+        <span style="color:#d2cd86; ">&lt;</span>script src<span style="color:#d2cd86; ">=</span><span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">./path/scrollSpy.js</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">&gt;</span><span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>script<span style="color:#d2cd86; ">&gt;</span>
+        <span style="color:#d2cd86; ">&lt;</span>script<span style="color:#d2cd86; ">&gt;</span> <span style="color:#e66170; font-weight:bold; ">new</span> ScrollSpy<span style="color:#d2cd86; ">(</span><span style="color:#d2cd86; ">)</span><span style="color:#b060b0; ">;</span> <span style="color:#d2cd86; ">&lt;</span><span style="color:#d2cd86; ">/</span>script<span style="color:#d2cd86; ">&gt;</span>
+      </pre>
+
+      </section>
+      <section id="aa" data-trigger="true">
+        <h2>
+          ADITIONAL CONFIGS
+          <h6>
+            FOR MORE CUSTOMISATION
+          </h6>
+          <br>
+
+          <pre style="color:#d1d1d1;background:#000000;"><span style="color:#e66170; font-weight:bold; ">let</span> options<span style="color:#d2cd86; ">=</span><span style="color:#b060b0; ">{</span>
+  offsetTop<span style="color:#b060b0; ">:</span> window<span style="color:#d2cd86; ">.</span>innerHeight<span style="color:#d2cd86; ">/</span><span style="color:#008c00; ">8</span><span style="color:#d2cd86; ">,</span>
+  offsetBottom<span style="color:#b060b0; ">:</span> window<span style="color:#d2cd86; ">.</span>innerHeight<span style="color:#d2cd86; ">/</span><span style="color:#008c00; ">8</span><span style="color:#d2cd86; ">,</span>
+  links<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">nav *</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">,</span> 
+  linksTo<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">[data-trigger]</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">,</span> 
+  activeClassName<span style="color:#b060b0; ">:</span> <span style="color:#02d045; ">"</span><span style="color:#00c4c4; ">active</span><span style="color:#02d045; ">"</span><span style="color:#d2cd86; ">,</span> 
+  checkLowerBound<span style="color:#b060b0; ">:</span> <span style="color:#0f4d75; ">true</span> 
+<span style="color:#b060b0; ">}</span>
+<span style="color:#e66170; font-weight:bold; ">new</span> ScrollSpy<span style="color:#d2cd86; ">(</span>options<span style="color:#d2cd86; ">)</span><span style="color:#b060b0; ">;</span>
+</pre>
+
+        </h2>
+      </section>
+      <section id="a" data-trigger="true">
+        <h2>
+          CREDITS
+        </h2>
+        <h6>
+          DEV BEHIND
+        </h6>
+        <br>
+        <div class="card-container">
+          <div class="card">
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/47657465?v=4" alt="">
+            <div style="text-align: center;">
+              <h4 style="padding: 10px 10px 10px 10px;">
+                UTKARSH48
+              </h4>
+            </div>
+          </div>
+      </section>
+    </article>
+  </main>
+  <script src="../scrollSpy.js"></script>
+  <script>
+    new ScrollSpy();
+  </script>
+</body>
+
+</html>
