@@ -57,7 +57,4 @@ ALERT! A [hosted sample](https://utkarsh48.github.io/scrollSpy/) in this FOLDER!
     new ScrollSpy(options);
 ```
 
-```
-styled
-```
- documentaion [here](https://raghav9official.github.io/scrollSpy/docs/)
+#### `styled` documentaion [here](https://raghav9official.github.io/scrollSpy/docs/)
