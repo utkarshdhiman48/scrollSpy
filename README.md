@@ -1,5 +1,4 @@
-
-# scrollSpy
+# scrollSpy 👀
 
 A pure JS scrollSpy with no dependency.
 
